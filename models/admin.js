@@ -11,11 +11,11 @@ exports.create = function(admin, callback){
 }
 
 exports.delete = function (adminId, callback) {
-    db.executeQuery("DELETE from `qldanhsach`.`banhang` WHERE id = ?",adminId,callback);
+    db.executeQuery("DELETE from `qldanhsach`.`banhang` WHERE masp = ?",adminId,callback);
 }
 exports.update = function (admin, callback) {
-    db.executeQuery("update `qldanhsach`.`banhang` set ? where `id` = ?;",[admin, admin.id], callback);
+    db.executeQuery("update `qldanhsach`.`banhang` set ? where `masp` = ?;",[admin, admin.id], callback);
 }
 exports.findOne = function (adminId, callback) {
-    db.executeQuery("select * from `qldanhsach`.`banhang` where id=?", adminId, callback);
+    db.executeQuery("select * from `qldanhsach`.`banhang` where masp=?", adminId, callback);
 }
